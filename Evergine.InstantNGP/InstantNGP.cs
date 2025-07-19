@@ -98,7 +98,10 @@ namespace Evergine.InstantNGP
             var compute_capacity_str = process.StandardOutput.ReadToEnd();
             process.WaitForExit();
 
-            return float.Parse(compute_capacity_str.Split(new[] { Environment.NewLine }, StringSplitOptions.None)[1]);
+            return float.Parse(
+               compute_capacity_str.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
+                System.Globalization.CultureInfo.InvariantCulture
+            );
         }
     }
 }
