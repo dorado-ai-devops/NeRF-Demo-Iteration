@@ -99,7 +99,7 @@ namespace Evergine.InstantNGP
             process.WaitForExit();
 
             return float.Parse(
-               compute_capacity_str.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
+                compute_capacity_str.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)[1].Trim(),
                 System.Globalization.CultureInfo.InvariantCulture
             );
         }
